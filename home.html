@@ -1,0 +1,358 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Management System - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="home.js"></script>
+    <script src="signup.js"></script>
+
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="routes.html">Routes</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="services.html">Fuel Stations & Services</a></li>
+                <li><a href="signin.html">Sign In/Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="search-section">
+            <h1>Check Traffic Conditions</h1>
+            <form>
+                <input type="text" placeholder="Start Point">
+                <input type="text" placeholder="End Point">
+                <button type="submit">Search Routes</button>
+            </form>
+        </section>
+        <section class="routes-section">
+            <h2>Route Options</h2>
+            <div class="route-options">
+                <div class="route">
+                    <h3>Fastest Route</h3>
+                    <p>Details about congestion, ETA, etc.</p>
+                </div>
+                <div class="route">
+                    <h3>Second Fastest Route</h3>
+                    <p>Details about congestion, ETA, etc.</p>
+                </div>
+            </div>
+        </section>
+        <section class="notifications-section">
+            <h2>Notifications</h2>
+            <p>Real-time alerts about chosen routes.</p>
+        </section>
+        <section class="services-section">
+            <h2>Fuel Stations & Services</h2>
+            <p>Details about nearby fuel stations, restaurants, washrooms, medical shops, hospitals.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Made By Arghyadip - With Love</p>
+    </footer>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Based Traffic Management System</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Home Page Styles */
+        .home-section, .routes-section, .notifications-section, .services-section {
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .route-options .route {
+            background-color: #e9e9e9;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .notifications-section p {
+            color: #ff5722;
+        }
+
+        /* Admin Dashboard Styles */
+        .admin-section {
+            margin-bottom: 30px;
+        }
+
+        .admin-section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .admin-section p, .contact-list p {
+            color: #666;
+        }
+
+        /* Contact Page Styles */
+        .contact-section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .contact-list h3 {
+            margin: 10px 0 5px 0;
+            font-size: 18px;
+        }
+
+        /* Buttons */
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>AI-Based Traffic Management System</h1>
+    </header>
+
+    <nav>
+        <a href="#home-section">Home</a>
+        <a href="#admin-dashboard">Admin Dashboard</a>
+        <a href="#contact-section">Contact</a>
+        <a href="#admin-page">Admin Page</a>
+        <a href="#signup-section">Sign Up/Sign In</a>
+    </nav>
+
+    <main>
+
+        <!-- Home Page Section -->
+        <section id="home-section" class="home-section">
+            <h2>Search Your Route</h2>
+            <form>
+                <div class="input-group">
+                    <label for="start-point">Start Point:</label>
+                    <input type="text" id="start-point" name="start-point" required>
+                </div>
+                <div class="input-group">
+                    <label for="end-point">End Point:</label>
+                    <input type="text" id="end-point" name="end-point" required>
+                </div>
+                <button type="submit">Search</button>
+            </form>
+            <div class="routes-section">
+                <h2>Route Options</h2>
+                <div class="route-options"></div>
+            </div>
+            <div class="notifications-section">
+                <h2>Real-Time Notifications</h2>
+                <p></p>
+            </div>
+            <div class="services-section">
+                <h2>Additional Services</h2>
+                <p>Nearby fuel stations, restaurants, washrooms, medical shops, hospitals, etc.</p>
+            </div>
+        </section>
+
+        <!-- Admin Dashboard Section -->
+        <section id="admin-dashboard" class="admin-section">
+            <h2>Monitoring Dashboard</h2>
+            <p class="traffic-conditions">Traffic Condition: -</p>
+            <p class="camera-feeds">Camera Feed: -</p>
+            <p class="ai-predictions">AI Predictions: -</p>
+            <p class="congestion-alerts">Congestion Alerts: -</p>
+            <div class="manual-control">
+                <h3>Manual Control</h3>
+                <button>Toggle Light Status</button>
+                <button>Set Timer</button>
+            </div>
+            <div class="emergency-protocols">
+                <h3>Emergency Protocols</h3>
+                <button>Clear Routes</button>
+                <button>Notify Emergency Services</button>
+            </div>
+        </section>
+
+        <!-- Contact Page Section -->
+        <section id="contact-section" class="contact-section">
+            <h2>Contact Us</h2>
+            <form>
+                <div class="input-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="contact-list">
+                <h3>Local Police Stations:</h3>
+                <p>Station A: 123-456-7890</p>
+                <p>Station B: 123-456-7891</p>
+                <h3>Hospitals:</h3>
+                <p>Hospital A: 123-456-7892</p>
+                <p>Hospital B: 123-456-7893</p>
+                <h3>Control Room:</h3>
+                <p>Contact: 123-456-7894</p>
+            </div>
+        </section>
+
+        <!-- Admin Page Section -->
+        <section id="admin-page" class="admin-section">
+            <h2>Admin Page</h2>
+            <div class="user-management">
+                <h3>User Management</h3>
+                <button>View Users</button>
+                <button>Edit User</button>
+                <button>Delete User</button>
+            </div>
+            <div class="database-management">
+                <h3>Database Management</h3>
+                <button>Manage Traffic Data</button>
+                <button>Manage Camera Feeds</button>
+                <button>View AI Logs</button>
+            </div>
+            <div class="system-monitoring">
+                <h3>System Monitoring</h3>
+                <button>Monitor System</button>
+            </div>
+            <div class="analytics">
+                <h3>Analytics</h3>
+                <button>View Traffic Data Reports</button>
+                <button>View AI Predictions</button>
+            </div>
+        </section>
+
+        <!-- Sign Up/Sign In Page Section -->
+        <section id="signup-section" class="signup-section">
+            <h2>Sign Up/Sign In</h2>
+            <form>
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Send OTP</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Made By Arghyadip - With Love</p>
+    </footer>
+
+    <script>
+        // Home Page JavaScript
+        document.querySelector('#home-section form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const startPoint = event.target[0].value;
+            const endPoint = event.target[1].value;
+
+            if (startPoint && endPoint) {
+                displayRoutes(startPoint, endPoint);
+            } else {
+                alert('Please enter both start and end points.');
+            }
+        });
+
+        function displayRoutes(start, end) {
+            const routes = [
+                { name: "Fastest Route", details: "Congestion: Low, ETA: 20 mins" },
+                { name: "Second Fastest Route", details: "Congestion: Medium, ETA: 25 mins" }
+            ];
+
+            const routeOptions = document.querySelector('.route-options');
+            routeOptions.innerHTML = ''; // Clear previous results
+
+            routes.forEach(route => {
+                const routeDiv = document.createElement('div');
+                routeDiv.className = 'route';
+                routeDiv.innerHTML = `<strong>${route.name}</strong><p>${route.details}</p>`;
+                routeOptions.appendChild(routeDiv);
+            });
+        }
+    </script>
+
+</body>
+</html>
